@@ -4,13 +4,13 @@
 
 ## 预览
 
-本地直接打开 `resume.html` 即可：
+### 👉 [在线预览](https://macoto-wcr.github.io/resume/)
+
+也可以在本地直接打开 `index.html`：
 
 ```
-code/resume/resume.html
+code/resume/index.html
 ```
-
-> 想看在线版本？在仓库的 **Settings → Pages** 里把 Branch 选成 `main` / `root` 并保存，等一两分钟就能通过 `https://macoto-wcr.github.io/resume/` 访问。开启后可以把链接补到这一节。
 
 ## 页面结构
 
@@ -35,14 +35,14 @@ code/resume/resume.html
 
 ```
 resume/
-├── resume.html   # 全部内容：结构 + 样式都在同一个文件里
+├── index.html   # 全部内容：结构 + 样式都在同一个文件里
 └── README.md
 ```
 
 ## 后续计划
 
 - [ ] 接入 JavaScript，让「发送」按钮真的能处理表单
-- [ ] 开启 GitHub Pages 上线
+- [x] 开启 GitHub Pages 上线
 - [ ] 持续更新简历内容
 
 ## 关于我
