@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历-高级版</title>
+    <style>
+         html {
+            scroll-padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+            background:  #f5f5f7;
+            color: #1d1d1f;
+            line-height:1.6;
+            font-family: "Microsoft YaHei";
+        }
+
+        .top{
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            background: #1d1d1f;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: background 0.2s;
+            z-index: 50;
+        }
+        
+        .top:hover{
+            background: #0071e3;
+        }
+         *, *::before, *::after {
+             box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            padding: 14px 24px;
+            border-bottom: 1px solid #e5e5e7;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.85);   /* 必须有底色，否则内容会透出来 */
+            
+        }
+
+        .logo{
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: auto;
+        }
+
+        .nav a{
+            color: #1d1d1f;
+            font-size: 15px;
+            text-decoration: none;
+            transition: color 0.2s;
+
+        }
+
+        .nav a:hover{
+            color:  #0071e3;
+        }
+        
+        header{
+            padding: 80px 0 56px;
+            text-align: center;
+        }
+
+        header h1{
+            margin: 0 0 12px;
+            font-size: 48px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        header p{
+            margin: 0;
+            font-size: 18px;
+            color: #86868b;
+        }
+        
+        section{
+            margin-bottom: 56px;
+        }
+
+        section h2{
+            margin:0 0 24px;
+            font-size: 28px;
+        }
+
+        section > p{
+            margin: 0;
+            color: #86868b;
+        }
+
+        .skills{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:16px;
+        }
+
+        .skill{
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e5e5e7;
+            border-radius:12px;
+            transition: border-color 0.25s;
+        }
+
+        .skill:hover{
+            border-color : #0071e3;
+        }
+
+        .skill h3{
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        .skill p{
+            margin: 0;
+            color: #86868b;
+            font-size: 14px;
+        }
+
+        .cards{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card{
+            padding-left: 16px;
+            border-left: 3px solid #0071e3;
+        }
+
+        .card p:first-child{
+            margin: 0;
+            color: #86868b;
+            font-size: 14px;
+        }
+
+        .card h3{
+            margin: 4px 0 6px;
+            font-size: 18px;
+        }
+
+        .card p:last-child{
+            margin: 0;
+            color: #86868b;
+        }
+
+        .box{
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #e5e5e7;
+            border-radius: 12px;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .form input,
+        .form textarea{
+            padding: 10px 12px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #1d1d1f;
+            background: #fff;
+            border: 1px solid #e5e5e7;
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .form input:focus,
+        .form textarea:focus{
+            outline: none;
+            border-color: #0071e3;
+        }
+
+        .form textarea{
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form button{
+            align-self: flex-start;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #fff;
+            background: #0071e3;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .form button:hover{
+            background: #005bb8;
+        }
+
+        ::placeholder{
+            color:#a1a1a6 ;
+        }
+
+        footer {
+            padding: 24px 0 48px;
+            text-align: center;
+            color: #86868b;
+            font-size: 14px;
+        }
+
+        footer p{
+            margin: 0;
+        }
+
+         @media (max-width: 768px) {
+      /* 1. 导航：缩小间距和内边距 */
+        .nav {
+          gap: 16px;
+          padding: 12px 16px;
+        }
+        .nav a {
+          font-size: 14px;
+        }
+
+      /* 2. 内容容器：左右留白小一点 */
+        .container {
+              padding: 0 16px;
+        }
+
+      /* 3. 首屏：标题和留白一起缩小 */
+        header {
+              padding: 56px 0 40px;
+        }
+        header h1 {
+              font-size: 32px;
+        }
+        header p {
+              font-size: 16px;
+        }
+
+      /* 4. 章节标题 */
+        section h2 {
+              font-size: 22px;
+        }
+
+      /* 5. 技能网格：三列变一列 */
+        .skills {
+              grid-template-columns: 1fr;
+        }
+
+      /* 6. 表单卡片：内边距缩小 */
+        .box {
+              padding: 16px;
+        }
+  }
+    </style>
+</head>
+<body id="top">
+    <nav class="nav">
+        <div class="logo">吴诚睿</div>
+        <a href="#about">简介</a>
+        <a href="#skills">技能</a>
+        <a href="#exp">经历</a>
+        <a href="#contact">联系</a>
+    </nav>
+    <div class="container">
+        <header>
+        <h1>吴诚睿</h1>
+        <p>前端开发 &middot; 大三在读</p>
+        </header>
+
+        <main>
+        <section id="about">
+            <h2>个人简介</h2>
+            <p>大三在读，正在从零系统学习前端开发。喜欢把复杂的问题拆成小块逐个解决，也喜欢做出"看起来就很舒服"的页面。</p>
+        </section>
+
+        <section id="skills">
+            <h2>专业技能</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <p>语义化标签、表单、媒体元素</p>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <p>盒模型、Flexbox、Grid、响应式</p>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <p>语法基础、DOM 操作、事件</p>
+                </div>
+                <div class="skill">
+                    <h3>Git</h3>
+                    <p>版本控制、GitHub 协作</p>
+                </div>
+                <div class="skill">
+                    <h3>设计感</h3>
+                    <p>排版、留白、配色</p>
+                </div>
+                <div class="skill">
+                    <h3>学习能力</h3>
+                    <p>查文档、拆问题、边做边学</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="exp">
+            <h2>学习经历</h2>
+            <div class="cards">
+                <div class="card">
+                    <p>2026 · 上学期</p>
+                    <h3>系统学习HTML与CSS</h3>
+                    <p>完成自我介绍页、电影清单、注册表单、课程表等练习。</p>
+                </div>
+                <div class="card">
+                    <p>2026 · 现在</p>
+                    <h3>用 HTML + CSS 手写个人简历页</h3>
+                    <p>从布局到配色全部自己动手，不依赖任何框架。</p>
+                </div>
+                <div class="card">
+                    <p>下一步</p>
+                    <h3>JavaScript</h3>
+                    <p>准备进入前端最核心的一门语言。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact"> 
+            <h2>联系我</h2>
+            <div class="box">
+                <form class="form">
+                    <input type="text" id="name" name="username" placeholder="你的名字">
+                    <input type="tel" id="tel" name="phone" placeholder="你的电话">
+                    <textarea name="message" id="msg" placeholder="想说的话"></textarea>
+                    <button type="button">发送</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 吴诚睿 · 用 HTML + CSS 手写</p>
+    </footer>
+    </div>
+    <a class="top" href="#top" aria-label="回到顶部">↑</a>
+</body>
+</html>
